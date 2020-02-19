@@ -1,0 +1,91 @@
+.createOTButton {
+  position: absolute;
+  right: 0;
+  margin-top: -40px;
+  margin-right: 16px;
+  background-color: #16a1b9;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  width: 240px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.createOTButton:hover {
+  opacity: 0.8;
+}
+
+.progressBar {
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  transition: 0.5s;
+  border-radius: 32px;
+}
+
+svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  z-index: 1000;
+}
+
+svg circle {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transform: translate(5px, 5px);
+}
+
+svg circle:nth-child(2) {
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  transition: 0.5s;
+}
+
+.box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 8px;
+  margin-top: 26px;
+}
+
+.percent {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+}
+
+.percent .number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.percent .number h2 {
+  opacity: 0.4;
+  font-weight: 700;
+  font-size: 32px;
+  transition: 0.5s;
+}
+
+.percent:hover .number h2 {
+  opacity: 1;
+  font-size: 40px;
+}
+
+.asignButton {
+  float: right;
+}

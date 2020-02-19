@@ -1,0 +1,30 @@
+.popupBack {
+  background-color: #00000075;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 100vh;
+}
+
+.popupContent {
+}
+
+.nameCard {
+  width: 25%;
+  display: inline-block;
+  margin: 3% 4%;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  background: #000;
+}
+
+.nameCard .nameText {
+  color: #fff;
+}

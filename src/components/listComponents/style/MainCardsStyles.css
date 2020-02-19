@@ -1,0 +1,9 @@
+.meta {
+  text-align: right;
+  position: absolute;
+  width: 100%;
+  right: 0;
+  top: 0;
+  margin-right: 8px;
+  font-weight: 500;
+}

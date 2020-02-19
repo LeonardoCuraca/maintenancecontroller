@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,600,800');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+table {
+  position: relative;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+thead {
+  font-size: 1em;
+  font-weight: 500;
+  text-align: left;
+  color: #33aeae;
+}
+
+thead th {
+  text-align: right;
+  padding: 0.5em 1em;
+}
+
+input {
+  width: 100%;
+  font-size: 1em;
+  font-weight: 500;
+  text-align: left;
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  outline: none;
+  border-width: 1px;
+  border-style: dashed;
+  border-color: transparent;
+  border-image: initial;
+  overflow: visible;
+}
+table input {
+  color: rgb(0, 0, 0);
+}
+.text input {
+  width: 100%;
+  font-size: 0.9em;
+  text-align: left;
+  color: #33aeae;
+  background-color: transparent;
+  outline: none;
+  border-width: 1px;
+  border-style: dashed;
+  border-color: transparent;
+  border-image: initial;
+  overflow: visible;
+}
+.text input.compnay-name {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+.text input:hover {
+  border-color: rgb(123, 220, 181);
+}
+tbody tr {
+  border-bottom: 1px solid rgb(123, 220, 181);
+}
+.leftTD {
+  float: right;
+}
+tbody tr td div {
+  width: 100%;
+  display: flex;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+}
+tbody input {
+  color: rgb(45, 62, 80);
+}

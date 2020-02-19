@@ -1,0 +1,20 @@
+.ListContainer {
+  width: 100%;
+}
+
+.OT_ListTable {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.OT_ListTable thead tr th {
+  padding: 8px 16px;
+}
+
+.OT_ListTable tbody tr td {
+  padding: 8px 16px;
+}
+
+.OT_ListTable thead {
+  background-color: #fff;
+}

@@ -1,0 +1,20 @@
+.stateList {
+  margin-top: 8px;
+  padding: 0;
+  width: 100%
+}
+
+.stateList button {
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  width: 16.666666%;
+  background: #607d8b;
+  border: none;
+  padding: 8px 0;
+  outline: none;
+}
+
+.stateList button:hover {
+  opacity: 0.8;
+}

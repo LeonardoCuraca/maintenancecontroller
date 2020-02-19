@@ -1,0 +1,7 @@
+.mainRow {
+  cursor: pointer;
+}
+
+.mainRow:hover {
+  background: #f3f5f9;
+}

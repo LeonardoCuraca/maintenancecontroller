@@ -1,0 +1,51 @@
+.loginBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(45deg, #9fbaa8, #31354c);
+  transition: 0.4s;
+}
+
+.loginForm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+}
+
+.loginForm h1 {
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.inputText {
+  display: block;
+  box-sizing: border-box;
+  width: 240px;
+  background: #ffffff28;
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  color: #fff;
+  outline: none;
+  margin: 10px 0;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.inputText::placeholder {
+  color: #ffffff75;
+}
+
+.loginButton {
+  width: 240px;
+  background: #2c3e50;
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}

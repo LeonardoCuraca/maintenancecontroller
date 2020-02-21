@@ -1,1 +1,1 @@
-export const host = "http://eucbrasa.com.pe/Carley_v9/public";
+export const host = "https://eucbrasa.com.pe/Carley_v9/public";

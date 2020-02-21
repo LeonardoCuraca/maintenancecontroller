@@ -45,22 +45,22 @@ export default class OT_Main extends Component {
           var backgroundColor;
           var color;
           if (row.estado == 1) {
-            backgroundColor = "#16a1b91f";
+            backgroundColor = "#16a1b9ba";
           }
           if (row.estado == 2) {
-            backgroundColor = "#dc35471f";
+            backgroundColor = "#dc3547ba";
           }
           if (row.estado == 3) {
-            backgroundColor = "#29a6431f";
+            backgroundColor = "#29a643ba";
           }
           if (row.estado == 4) {
-            backgroundColor = "#fec1061f";
+            backgroundColor = "#fec106ba";
           }
           if (row.estado == 5) {
-            backgroundColor = "#ff5e001f";
+            backgroundColor = "#ff5e00ba";
           }
           if (row.estado == 6) {
-            backgroundColor = "#9d00ff1f";
+            backgroundColor = "#9d00ffba";
           }
           return(
             <OT_MainRow

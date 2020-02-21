@@ -9,7 +9,7 @@
   font-size: 16px;
   text-align: center;
   width: 16.666666%;
-  background: #607d8b;
+  background: #f3f5f9;
   border: none;
   padding: 8px 0;
   outline: none;
@@ -17,4 +17,11 @@
 
 .stateList button:hover {
   opacity: 0.8;
+}
+
+.notificationBar {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 18px;
+  overflow-x: scroll;
 }

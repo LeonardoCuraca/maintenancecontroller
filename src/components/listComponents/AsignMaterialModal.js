@@ -205,8 +205,8 @@ export default class AsignMaterialModal extends Component {
                 {this.state.materiales.map((row, i) => {
                   return(
                     <div style={{display: "flex"}}>
-                      <Input type="text" value={this.state.materiales[i].asignada} onChange={(e) => this.changeARow(e, i)}/>
-                      <Input type="number" min="1" value={this.state.materiales[i].cantidad_asignada} onChange={(e) => this.changeCRow(e, i)}/>
+                      <Input type="text" placeholder="Nombre" value={this.state.materiales[i].asignada} onChange={(e) => this.changeARow(e, i)}/>
+                      <Input type="number" placeholder="Cantidad" min="1" value={this.state.materiales[i].cantidad_asignada} onChange={(e) => this.changeCRow(e, i)}/>
                     </div>
                   )
                 })}

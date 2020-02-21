@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/control-patio/static/css/main.1f4d1037.chunk.css",
+    "main.js": "/control-patio/static/js/main.62700fff.chunk.js",
+    "main.js.map": "/control-patio/static/js/main.62700fff.chunk.js.map",
+    "runtime-main.js": "/control-patio/static/js/runtime-main.fb1537fa.js",
+    "runtime-main.js.map": "/control-patio/static/js/runtime-main.fb1537fa.js.map",
+    "static/js/2.2971381f.chunk.js": "/control-patio/static/js/2.2971381f.chunk.js",
+    "static/js/2.2971381f.chunk.js.map": "/control-patio/static/js/2.2971381f.chunk.js.map",
+    "index.html": "/control-patio/index.html",
+    "precache-manifest.d7e23ea038a5714eee4be31051df265f.js": "/control-patio/precache-manifest.d7e23ea038a5714eee4be31051df265f.js",
+    "service-worker.js": "/control-patio/service-worker.js",
+    "static/css/main.1f4d1037.chunk.css.map": "/control-patio/static/css/main.1f4d1037.chunk.css.map",
+    "static/js/2.2971381f.chunk.js.LICENSE": "/control-patio/static/js/2.2971381f.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fb1537fa.js",
+    "static/js/2.2971381f.chunk.js",
+    "static/css/main.1f4d1037.chunk.css",
+    "static/js/main.62700fff.chunk.js"
+  ]
+}

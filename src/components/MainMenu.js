@@ -23,7 +23,8 @@ export default class MainMenu extends Component {
       orangeTable: false,
       purpleTable: false,
       area: -1,
-      rol_if: 0
+      rol_if: 0,
+      TokenState: 'AUTHORIZED',
     }
   }
 

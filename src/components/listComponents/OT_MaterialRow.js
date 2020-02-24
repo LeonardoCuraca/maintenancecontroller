@@ -89,12 +89,19 @@ export default class OT_RequirementsRow extends Component {
   render() {
     return(
       <tr>
-        <td colspan="6">{this.props.data.asignada} ({this.props.data.cantidad_asignada})</td>
+        <td colspan="6">
+          <div className="ui label">
+            {this.props.data.asignada}
+            <div className="detail">{this.props.data.cantidad_asignada}</div>
+          </div>
+        </td>
         {this.props.rol == 4 || this.props.rol == 5 ?
           <td colspan="6">
-            <Input type="text" placeholder="Código" value={this.state.material.material_id} onChange={this.changeRow.bind(this)}/>
-            <div className="ui small basic icon buttons" onClick={this.saveCode.bind(this)}>
-              <button className="ui button"><i style={{color: this.state.color}} className="check icon"></i></button>
+            <div class="ui action input">
+              <Input type="text" placeholder="Código" value={this.state.material.material_id} onChange={this.changeRow.bind(this)}/>
+              <button class="ui icon button" onClick={this.saveCode.bind(this)}>
+                <i style={{color: this.state.color}} className="check icon"></i>
+              </button>
             </div>
           </td>
           : null

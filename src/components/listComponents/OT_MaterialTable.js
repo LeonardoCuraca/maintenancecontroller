@@ -102,7 +102,7 @@ export default class OT_RequirementsTable extends Component {
             : null
           }
         </table>
-        <div style={{marginTop: "-16px"}}><button style={{width: "100%"}} onClick={this.despachar.bind(this)}>Finalizar</button></div>
+        <div style={{marginTop: "-16px"}}><button className="ui button" style={{width: "100%"}} onClick={this.despachar.bind(this)}>Finalizar</button></div>
       </div>
     )
   }

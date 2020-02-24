@@ -74,6 +74,14 @@ export default class OT_RequirementsRow extends Component {
           </td>
           : null
         }
+        {(this.props.state == 4 || this.props.state == 5) && this.state.color != "#737373" ?
+          <td className="right aligned collapsing" style={{zIndex: 30}}>
+            <div className="ui small basic icon buttons">
+              <button className="ui button"><i style={{color: this.state.color}} className="check icon"></i></button>
+            </div>
+          </td>
+          : null
+        }
       </tr>
     )
   }

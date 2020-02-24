@@ -439,6 +439,10 @@ export default class OT_FilterTable extends Component {
                   </div>
                   : null
                 }
+                {this.props.state == 5 ?
+                  <button class="ui red button" onClick={this.toggleSeviceList.bind(this)} style={{marginTop: "4px", marginBottom: "4px"}}>Servicio a Realizar</button>
+                  : null
+                }
                 {this.props.state == 5 && this.props.rol == 5 ?
                   <div style={{display: "inline-grid"}}>
                     <button class="ui button" style={{background: "#9d00ff", color: "#fff", marginTop: "4px", marginBottom: "4px"}} onClick={this.darAlta.bind(this)}>Dar de Alta</button>

@@ -163,7 +163,7 @@ export default class OT_RequirementsTable extends Component {
         <table className="ui table">
           <thead>
             <tr>
-              <th colspan="3">
+              <th colspan="4">
                 Prediagnóstico
                 {this.props.rol == 5 && this.props.state == 1 ?
                   <a style={{float: "right", cursor: "pointer"}} class="item" onClick={this.toggleNewRequirement.bind(this)}>

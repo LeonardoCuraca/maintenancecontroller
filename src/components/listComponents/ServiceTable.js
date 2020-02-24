@@ -51,6 +51,10 @@ export default class OT_RequirementsTable extends Component {
   }
 
   reload() {
+    this.setState({
+      selectedService: [],
+      tempObservacion: ""
+    })
     console.log(this.props.state);
     axios.get(host.host + '/api/tarea/' + this.props.id, {
       headers: {
@@ -148,7 +152,7 @@ export default class OT_RequirementsTable extends Component {
         <table className="ui table">
           <thead>
             <tr>
-              <th colspan="3">
+              <th colspan="4">
                 Servicios
                 {this.props.state == 4 ?
                   <a style={{float: "right", cursor: "pointer"}} class="item" onClick={this.toggleNewTarea.bind(this)}>

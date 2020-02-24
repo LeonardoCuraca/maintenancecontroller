@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import * as host from '../host';
 
+import { Input } from "reactstrap";
+
 export default class OT_RequirementsRow extends Component {
 
   constructor(props) {
@@ -88,9 +90,9 @@ export default class OT_RequirementsRow extends Component {
     return(
       <tr>
         <td colspan="6">{this.props.data.asignada} ({this.props.data.cantidad_asignada})</td>
-        {this.props.rol == 4 ?
+        {this.props.rol == 4 || this.props.rol == 5 ?
           <td colspan="6">
-            <input type="text" placeholder="c ó d i g o" value={this.state.material.material_id} onChange={this.changeRow.bind(this)}/>
+            <Input type="text" placeholder="Código" value={this.state.material.material_id} onChange={this.changeRow.bind(this)}/>
             <div className="ui small basic icon buttons" onClick={this.saveCode.bind(this)}>
               <button className="ui button"><i style={{color: this.state.color}} className="check icon"></i></button>
             </div>

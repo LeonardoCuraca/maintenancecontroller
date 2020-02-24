@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Mensaje from "./listComponents/Mensaje";
 import axios from 'axios';
 import * as host from './host.js';
 
@@ -15,6 +16,9 @@ export default class LoginPage extends Component {
       user: "",
       password: "",
       isLoggedIn: false,
+      messageOpen: false,
+      reason: "",
+      message: ""
     }
   }
 
@@ -35,14 +39,32 @@ export default class LoginPage extends Component {
   }
 
   handleSubmit(e) {
+    if (this.state.user == "" || this.state.password == "") {
+      this.setState({
+        reason: "Campos Vacíos",
+        message: "Complete todos los campos para iniciar sesión",
+        messageOpen: true
+      })
+      return
+    }
     axios.post(host.host + '/api/login/?email=' + this.state.user + '&password=' + this.state.password).then(res => {
       localStorage.setItem("token", res.data.token);
       this.setState({
         isLoggedIn: true,
       })
     }).catch(error => {
-      console.log(error);
+      this.setState({
+        reason: "Datos Inválidos",
+        message: "Verifique que su usuario o contraseña sean los correctos",
+        messageOpen: true
+      })
     });
+  }
+
+  closeMessage() {
+    this.setState({
+      messageOpen: false
+    })
   }
 
   render() {
@@ -54,6 +76,14 @@ export default class LoginPage extends Component {
     } else {
       content = (
         <div className="loginBox">
+          {this.state.messageOpen ?
+            <Mensaje
+              reason = {this.state.reason}
+              message = {this.state.message}
+              closeMessage = {this.closeMessage.bind(this)}
+            />
+            : null
+          }
           <div className="loginForm">
             <h1>Bienvenido</h1>
             <input className="inputText" type="text" value={this.state.user} placeholder="Usuario" onChange={this.changeUser.bind(this)} required />

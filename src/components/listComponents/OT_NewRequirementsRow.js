@@ -41,7 +41,7 @@ export default class OT_RequirementsRow extends Component {
   render() {
     return(
       <tr>
-        <td><input style={{width: "100%"}} type="text" value={this.state.newRequirement} onChange={this.changeNewRequirement.bind(this)}/></td>
+        <td colspan="2"><input style={{width: "100%"}} type="text" value={this.state.newRequirement} onChange={this.changeNewRequirement.bind(this)}/></td>
         <td className="right aligned collapsing">
           <div className="ui small basic icon buttons">
             <button onClick={this.createNewRequirement.bind(this)} className="ui button"><i className="add icon"></i></button>

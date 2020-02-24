@@ -41,16 +41,33 @@ export default class OT_RequirementsRow extends Component {
     })
   }
 
+  deleteRow(id) {
+    this.props.deleteRow(id)
+  }
+
   sendRequirement = () => {
     this.props.selectRequirement(this.props.data);
   }
 
   render() {
     return(
-      <tr onClick={this.sendRequirement}>
-        <td>{this.props.data.descripcion}</td>
+      <tr>
+        <td className="right aligned collapsing" style={{zIndex: 30}} onClick={this.sendRequirement}>
+          <div className="ui small basic icon buttons">
+            <button className="ui button"><i className="right chevron icon"></i></button>
+          </div>
+        </td>
+        <td style={{verticalAlign: "middle"}}>{this.props.data.descripcion}</td>
+        {this.props.state == 1 && this.props.rol == 5 ?
+          <td className="right aligned collapsing" style={{zIndex: 30}} onClick={this.deleteRow.bind(this, this.props.data.id)}>
+            <div className="ui small basic icon buttons">
+              <button className="ui button"><i style={{color: "red"}} class="trash alternate outline icon"></i></button>
+            </div>
+          </td>
+          : null
+        }
         {this.props.rol == 5 && this.props.state == 2 ?
-          <td className="right aligned collapsing" onClick={this.sendPercent}>
+          <td className="right aligned collapsing" style={{zIndex: 30}} onClick={this.sendPercent}>
             <div className="ui small basic icon buttons">
               <button className="ui button"><i style={{color: this.state.color}} className="check icon"></i></button>
             </div>

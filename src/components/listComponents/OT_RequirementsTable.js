@@ -43,7 +43,11 @@ export default class OT_RequirementsTable extends Component {
   }
 
   reload() {
-    console.log(this.props.state);
+    console.log("recargando");
+    this.setState({
+      selectedRequirement: [],
+      tempObservacion: ""
+    })
     axios.get(host.host + '/api/reque/' + this.props.id, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem("token")
@@ -80,6 +84,13 @@ export default class OT_RequirementsTable extends Component {
       percent: newPercent
     })
     this.props.reload();
+  }
+
+  deleteRow = (id) => {
+    axios.delete(host.host + "/api/reque/eliminar/" + id).then(res => {
+      console.log(res);
+      this.reload();
+    })
   }
 
   selectRequirement = (req) => {
@@ -175,6 +186,7 @@ export default class OT_RequirementsTable extends Component {
                     data = {row}
                     color = {color}
                     tableColor = {this.props.color}
+                    deleteRow = {this.deleteRow}
                     setPercent = {this.setPercent}
                     selectRequirement = {this.selectRequirement}
                     rol = {this.props.rol}

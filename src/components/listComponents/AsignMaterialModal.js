@@ -193,23 +193,52 @@ export default class AsignMaterialModal extends Component {
             </div>
             <Row>
               <Col lg="6">
-                <Label>Materiales Solicitados</Label>
-                {this.state.materiales.map(row => {
-                  return(
-                    <div style={{display: "flex", fontFamily: "arial", fontSize: "16px"}}><p style={{marginRight: "8px"}}>{row.solicitada}</p> >>> <p style={{marginLeft: "8px"}}>{row.cantidad_solicitada}</p></div>
-                  )
-                })}
+                <table class="ui very basic collapsing celled table">
+                  <thead>
+                    <tr>
+                      <th>Materiales Solicitados</th>
+                      <th>Cantidad Solicitada</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {this.state.materiales.map(row => {
+                    return(
+                      <tr>
+                        <td>
+                          <div class="sub header">{row.solicitada}</div>
+                        </td>
+                        <td>
+                          {row.cantidad_solicitada}
+                        </td>
+                      </tr>
+                    )
+                  })}
+                  </tbody>
+                </table>
               </Col>
               <Col lg="6">
-                <Label>Materiales Asignados</Label>
-                {this.state.materiales.map((row, i) => {
-                  return(
-                    <div style={{display: "flex"}}>
-                      <Input type="text" placeholder="Nombre" value={this.state.materiales[i].asignada} onChange={(e) => this.changeARow(e, i)}/>
-                      <Input type="number" placeholder="Cantidad" min="1" value={this.state.materiales[i].cantidad_asignada} onChange={(e) => this.changeCRow(e, i)}/>
-                    </div>
-                  )
-                })}
+                <table class="ui very basic collapsing celled table">
+                  <thead>
+                    <tr>
+                      <th>Materiales Solicitados</th>
+                      <th>Cantidad Solicitada</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {this.state.materiales.map((row, i) => {
+                    return(
+                      <tr>
+                        <td>
+                          <Input type="text" placeholder="Nombre" value={this.state.materiales[i].asignada} onChange={(e) => this.changeARow(e, i)}/>
+                        </td>
+                        <td>
+                          <Input type="number" placeholder="Cantidad" min="1" value={this.state.materiales[i].cantidad_asignada} onChange={(e) => this.changeCRow(e, i)}/>
+                        </td>
+                      </tr>
+                    )
+                  })}
+                  </tbody>
+                </table>
               </Col>
             </Row>
           </Form>

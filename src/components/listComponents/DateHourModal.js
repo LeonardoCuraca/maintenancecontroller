@@ -112,12 +112,12 @@ export default class DateHourModal extends Component {
               <Col lg="6">
                 <Label>Fecha y Hora de Ingreso</Label>
                 <Input type="date" value={this.state.f_programada_inicio} onChange={this.changeFIngreso.bind(this)}/>
-                <Input type="time" value={this.state.h_programada_inicio} onChange={this.changeHIngreso.bind(this)}/>
+                <Input style={{marginTop: "8px"}} type="time" value={this.state.h_programada_inicio} onChange={this.changeHIngreso.bind(this)}/>
               </Col>
               <Col lg="6">
                 <Label>Fecha y Hora de Salida</Label>
                 <Input type="date" value={this.state.f_programada_fin} onChange={this.changeFSalida.bind(this)}/>
-                <Input type="time" value={this.state.h_programada_fin} onChange={this.changeHSalida.bind(this)}/>
+                <Input style={{marginTop: "8px"}} type="time" value={this.state.h_programada_fin} onChange={this.changeHSalida.bind(this)}/>
               </Col>
             </Row>
           </Form>

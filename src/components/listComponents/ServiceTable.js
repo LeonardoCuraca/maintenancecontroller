@@ -43,6 +43,13 @@ export default class OT_RequirementsTable extends Component {
     });
   }
 
+  deleteRow = (id) => {
+    axios.delete(host.host + "/api/tarea/eliminar/" + id).then(res => {
+      console.log(res);
+      this.reload();
+    })
+  }
+
   reload() {
     console.log(this.props.state);
     axios.get(host.host + '/api/tarea/' + this.props.id, {
@@ -163,6 +170,7 @@ export default class OT_RequirementsTable extends Component {
                   <ServiceRow
                     data = {row}
                     color = {color}
+                    deleteRow = {this.deleteRow}
                     tableColor = {this.props.color}
                     setPercent = {this.setPercent}
                     selectService = {this.selectService}

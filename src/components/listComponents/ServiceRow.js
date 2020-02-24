@@ -11,6 +11,10 @@ export default class OT_RequirementsRow extends Component {
     }
   }
 
+  deleteRow(id) {
+    this.props.deleteRow(id)
+  }
+
   componentWillMount() {
     this.setState({
       color: this.props.color
@@ -47,8 +51,21 @@ export default class OT_RequirementsRow extends Component {
 
   render() {
     return(
-      <tr onClick={this.sendService}>
-        <td>{this.props.data.descripcion}</td>
+      <tr>
+        <td className="right aligned collapsing" style={{zIndex: 30}} onClick={this.sendService}>
+          <div className="ui small basic icon buttons">
+            <button className="ui button"><i className="right chevron icon"></i></button>
+          </div>
+        </td>
+        <td style={{verticalAlign: "middle"}}>{this.props.data.descripcion}</td>
+        {this.props.state == 4 && this.props.rol == 5 ?
+          <td className="right aligned collapsing" style={{zIndex: 30}} onClick={this.deleteRow.bind(this, this.props.data.id)}>
+            <div className="ui small basic icon buttons">
+              <button className="ui button"><i style={{color: "red"}} class="trash alternate outline icon"></i></button>
+            </div>
+          </td>
+          : null
+        }
         {this.props.rol == 5 && (this.props.state == 2 || this.props.state == 4) ?
           <td className="right aligned collapsing" onClick={this.sendPercent}>
             <div className="ui small basic icon buttons">

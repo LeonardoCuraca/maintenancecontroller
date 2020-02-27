@@ -31,7 +31,7 @@ export default class MainMenu extends Component {
 
   componentWillMount() {
     if (localStorage.getItem("token")){
-      axios.get(host.host + '/api/users/', {
+      axios.get(host.host + '/api/auth/user', {
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem("token")
         }

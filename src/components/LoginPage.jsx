@@ -47,7 +47,12 @@ export default class LoginPage extends Component {
       })
       return
     }
-    axios.post(host.host + '/api/login/?email=' + this.state.user + '&password=' + this.state.password).then(res => {
+    let data = {
+      email: this.state.user,
+      password: this.state.password,
+      remember_me: true
+    }
+    axios.post(host.host + '/api/auth/login', data).then(res => {
       localStorage.setItem("token", res.data.token);
       this.setState({
         isLoggedIn: true,

@@ -504,116 +504,116 @@ export default class OT_Main extends Component {
   render() {
     return(
       <div>
+          <div>
 
-        <div class="ui compact menu">
-          <a style={{background: this.state.areacolor1}} class="item" onClick={this.selectArea.bind(this, 1)}>
-            <i class="icon mail"></i> Estructuras
-            <div class="floating ui red label">{this.state.estructuras}</div>
-          </a>
-          <a style={{background: this.state.areacolor2}} class="item" onClick={this.selectArea.bind(this, 2)}>
-            <i class="icon users"></i> Aceite
-            <div class="floating ui orange label">{this.state.aceite}</div>
-          </a>
-          <a style={{background: this.state.areacolor3}} class="item" onClick={this.selectArea.bind(this, 3)}>
-            <i class="icon mail"></i> Neumáticos
-            <div class="floating ui yellow label">{this.state.neumaticos}</div>
-          </a>
-          <a style={{background: this.state.areacolor4}} class="item" onClick={this.selectArea.bind(this, 4)}>
-            <i class="icon users"></i> Pesada
-            <div class="floating ui green label">{this.state.pesada}</div>
-          </a>
-          <a style={{background: this.state.areacolor5}} class="item" onClick={this.selectArea.bind(this, 5)}>
-            <i class="icon mail"></i> Liviana
-            <div class="floating ui teal label">{this.state.liviana}</div>
-          </a>
-          <a style={{background: this.state.areacolor6}} class="item" onClick={this.selectArea.bind(this, 6)}>
-            <i class="icon users"></i> Gas
-            <div class="floating ui blue label">{this.state.gas}</div>
-          </a>
-          <a style={{background: this.state.areacolor7}} class="item" onClick={this.selectArea.bind(this, 7)}>
-            <i class="icon mail"></i> Frios
-            <div class="floating ui purple label">{this.state.frios}</div>
-          </a>
-        </div>
+            <div class="ui compact menu">
+              <a style={{background: this.state.areacolor1}} class="item" onClick={this.selectArea.bind(this, 1)}>
+                <i class="icon mail"></i> Estructuras
+                <div class="floating ui red label">{this.state.estructuras}</div>
+              </a>
+              <a style={{background: this.state.areacolor2}} class="item" onClick={this.selectArea.bind(this, 2)}>
+                <i class="icon users"></i> Aceite
+                <div class="floating ui orange label">{this.state.aceite}</div>
+              </a>
+              <a style={{background: this.state.areacolor3}} class="item" onClick={this.selectArea.bind(this, 3)}>
+                <i class="icon mail"></i> Neumáticos
+                <div class="floating ui yellow label">{this.state.neumaticos}</div>
+              </a>
+              <a style={{background: this.state.areacolor4}} class="item" onClick={this.selectArea.bind(this, 4)}>
+                <i class="icon users"></i> Pesada
+                <div class="floating ui green label">{this.state.pesada}</div>
+              </a>
+              <a style={{background: this.state.areacolor5}} class="item" onClick={this.selectArea.bind(this, 5)}>
+                <i class="icon mail"></i> Liviana
+                <div class="floating ui teal label">{this.state.liviana}</div>
+              </a>
+              <a style={{background: this.state.areacolor6}} class="item" onClick={this.selectArea.bind(this, 6)}>
+                <i class="icon users"></i> Gas
+                <div class="floating ui blue label">{this.state.gas}</div>
+              </a>
+              <a style={{background: this.state.areacolor7}} class="item" onClick={this.selectArea.bind(this, 7)}>
+                <i class="icon mail"></i> Frios
+                <div class="floating ui purple label">{this.state.frios}</div>
+              </a>
+            </div>
 
-        <ul className="stateList">
-          <button style={{color: "#9d00ffba", borderBottom: "1px solid" + this.state.color1}} onClick={this.selectState.bind(this, 6)}>Dadas de Alta</button>
-          <button style={{color: "#16a1b9ba", borderBottom: "1px solid" + this.state.color2}} onClick={this.selectState.bind(this, 1)}>Entrantes</button>
-          <button style={{color: "#dc3547ba", borderBottom: "1px solid" + this.state.color3}} onClick={this.selectState.bind(this, 2)}>En Revisión</button>
-          <button style={{color: "#29a643ba", borderBottom: "1px solid" + this.state.color4}} onClick={this.selectState.bind(this, 3)}>En Espera de Materiales</button>
-          <button style={{color: "#fec106ba", borderBottom: "1px solid" + this.state.color5}} onClick={this.selectState.bind(this, 4)}>En Proceso</button>
-          <button style={{color: "#ff5e00ba", borderBottom: "1px solid" + this.state.color6}} onClick={this.selectState.bind(this, 5)}>Finalizados</button>
-        </ul>
+            <ul className="stateList">
+              <button style={{color: "#9d00ffba", borderBottom: "1px solid" + this.state.color1}} onClick={this.selectState.bind(this, 6)}>Dadas de Alta</button>
+              <button style={{color: "#16a1b9ba", borderBottom: "1px solid" + this.state.color2}} onClick={this.selectState.bind(this, 1)}>Entrantes</button>
+              <button style={{color: "#dc3547ba", borderBottom: "1px solid" + this.state.color3}} onClick={this.selectState.bind(this, 2)}>En Revisión</button>
+              <button style={{color: "#29a643ba", borderBottom: "1px solid" + this.state.color4}} onClick={this.selectState.bind(this, 3)}>En Espera de Materiales</button>
+              <button style={{color: "#fec106ba", borderBottom: "1px solid" + this.state.color5}} onClick={this.selectState.bind(this, 4)}>En Proceso</button>
+              <button style={{color: "#ff5e00ba", borderBottom: "1px solid" + this.state.color6}} onClick={this.selectState.bind(this, 5)}>Finalizados</button>
+            </ul>
 
-        <input value={this.state.placa} placeholder="Placa" onChange={this.changePlaca.bind(this)}/>
-        <button class="ui grey button" style={{marginLeft: "8px"}} onClick={this.findByPlaca.bind(this)}>Buscar</button>
+            <input value={this.state.placa} placeholder="Placa" onChange={this.changePlaca.bind(this)}/>
+            <button class="ui grey button" style={{marginLeft: "8px"}} onClick={this.findByPlaca.bind(this)}>Buscar</button>
 
-        <input value={this.state.correlativo} placeholder="Correlativo" onChange={this.changeCorrelativo.bind(this)}/>
-        <button class="ui grey button" style={{marginLeft: "8px"}} onClick={this.findByCorrelativo.bind(this)}>Buscar</button>
+            <input value={this.state.correlativo} placeholder="Correlativo" onChange={this.changeCorrelativo.bind(this)}/>
+            <button class="ui grey button" style={{marginLeft: "8px"}} onClick={this.findByCorrelativo.bind(this)}>Buscar</button>
 
-        <h4 class="ui horizontal divider header" style={{marginTop: "16px", marginBottom: "16px"}}>
-          <i class="list icon"></i>
-          Listado de Órdenes de Trabajo
-        </h4>
+            <h4 class="ui horizontal divider header" style={{marginTop: "16px", marginBottom: "16px"}}>
+              <i class="list icon"></i>
+              Listado de Órdenes de Trabajo
+            </h4>
 
-          <table class="ui single line compact table">
-            <thead>
-              <tr>
-                <th>N°</th>
-                <th>Fecha Inicio</th>
-                <th>Hora Inicio</th>
-                <th>Vehículo</th>
-                <th>Tipo de Vehículo</th>
-                <th>Acoplado</th>
-                <th>Operación</th>
-                <th>Área</th>
-                <th>Conductor</th>
-                <th>DNI</th>
-                <th>Estado</th>
-              </tr>
-            </thead>
-            {this.state.url ?
-              <OT_MainTable
-                url = {this.state.url}
-              />
-              : null
-            }
-            {this.state.principal ?
-              <tfoot>
-                <tr>
-                  <th colspan="13">
-                    <div className="ui pagination menu" style={{width: "33.33%", marginLeft: "33.33%", marginRight: "33.33%"}}>
-                      <a className="icon item" onClick={this.back.bind(this)} style={{width: "14.2857143%"}}>
-                        <i className="left chevron icon"></i>
-                      </a>
-                      {this.state.pages.map(page => {
-                        if (page < this.state.page - 2 || page > this.state.page + 2) {
-                          if (((this.state.page == 1 && page == 4) || (this.state.page == 1 && page == 5)) || ((this.state.page == 2 && page == 5) || (this.state.page == 2 && page == 4)) || ((this.state.page == this.state.pages.length - 1 && page == this.state.pages.length - 3) || (this.state.page == this.state.pages.length - 1 && page == this.state.pages.length - 4)) || ((this.state.page == this.state.pages.length && page == this.state.pages.length - 3) || (this.state.page == this.state.pages.length && page == this.state.pages.length - 4))) {
-                            console.log("pass");
-                          } else {
-                            return
-                          }
-                        }
-                        var color = "";
-                        if (page == this.state.page) {
-                          color = "#f3f5f9"
-                        }
-                        return(
-                          <a className="item" onClick={this.selectPage.bind(this, page)} style={{width: "14.2857143%", justifyContent: "center", backgroundColor: color}}>{page}</a>
-                        )
-                      })}
-                      <a className="icon item" onClick={this.next.bind(this)} style={{width: "14.2857143%"}}>
-                        <i className="right chevron icon"></i>
-                      </a>
-                    </div>
-                  </th>
-                </tr>
-              </tfoot>
-              : null
-            }
-          </table>
-          <div className="notificationBar">
-            <NotificationBar/>
+              <table class="ui single line compact table">
+                <thead>
+                  <tr>
+                    <th>N°</th>
+                    <th>Fecha Inicio</th>
+                    <th>Hora Inicio</th>
+                    <th>Vehículo</th>
+                    <th>Tipo de Vehículo</th>
+                    <th>Acoplado</th>
+                    <th>Operación</th>
+                    <th>Área</th>
+                    <th>Conductor</th>
+                    <th>DNI</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                {this.state.url ?
+                  <OT_MainTable
+                    url = {this.state.url}
+                  />
+                  : null
+                }
+                {this.state.principal ?
+                  <tfoot>
+                    <tr>
+                      <th colspan="13">
+                        <div className="ui pagination menu" style={{width: "33.33%", marginLeft: "33.33%", marginRight: "33.33%"}}>
+                          <a className="icon item" onClick={this.back.bind(this)} style={{width: "14.2857143%"}}>
+                            <i className="left chevron icon"></i>
+                          </a>
+                          {this.state.pages.map(page => {
+                            if (page < this.state.page - 2 || page > this.state.page + 2) {
+                              if (((this.state.page == 1 && page == 4) || (this.state.page == 1 && page == 5)) || ((this.state.page == 2 && page == 5) || (this.state.page == 2 && page == 4)) || ((this.state.page == this.state.pages.length - 1 && page == this.state.pages.length - 3) || (this.state.page == this.state.pages.length - 1 && page == this.state.pages.length - 4)) || ((this.state.page == this.state.pages.length && page == this.state.pages.length - 3) || (this.state.page == this.state.pages.length && page == this.state.pages.length - 4))) {
+                                console.log("pass");
+                              } else {
+                                return
+                              }
+                            }
+                            var color = "";
+                            if (page == this.state.page) {
+                              color = "#f3f5f9"
+                            }
+                            return(
+                              <a className="item" onClick={this.selectPage.bind(this, page)} style={{width: "14.2857143%", justifyContent: "center", backgroundColor: color}}>{page}</a>
+                            )
+                          })}
+                          <a className="icon item" onClick={this.next.bind(this)} style={{width: "14.2857143%"}}>
+                            <i className="right chevron icon"></i>
+                          </a>
+                        </div>
+                      </th>
+                    </tr>
+                  </tfoot>
+                  : null
+                }
+              </table>
+              <NotificationBar/>
           </div>
       </div>
     )

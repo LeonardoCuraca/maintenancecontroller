@@ -23,7 +23,7 @@ export default class OT_FilterRow extends Component {
     console.log(this.state.rowData);
     return(
       <tr className="tableRow" onClick={this.props.showInfo}>
-        <td style={{paddingTop: "12px", paddingBottom: "12px"}} className="">{this.pad(this.state.rowData.id, 6)}</td>
+        <td style={{paddingTop: "12px", paddingBottom: "12px"}} className="">{this.state.rowData.correlativo}</td>
         {this.props.data.placa_temporal ?
           <td style={{paddingTop: "12px", paddingBottom: "12px"}} className="">{this.state.rowData.placa_temporal}</td>
           :

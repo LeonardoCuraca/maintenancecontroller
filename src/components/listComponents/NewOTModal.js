@@ -94,6 +94,12 @@ class NewOTDetail extends Component {
     })
   }
 
+  pad(n, width, z) {
+    z = z || '0';
+    n = n + '';
+    return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+  }
+
   handleSubmit() {
     console.log(this.state);
     if (this.state.conductor == "" || this.state.dni == "" || this.state.correlativo == "" || this.state.fecha_ingreso == "" || this.state.h_ingreso == "" || this.state.vehiculo_id == "") {
@@ -102,26 +108,34 @@ class NewOTDetail extends Component {
       })
       return
     }
+
+    if (this.state.codigo_acceso == 0) {
+      this.setState({
+        correlativo: "00" + this.props.area + "-" + this.pad(this.state.correlativo, 6)
+      })
+    }
+
     this.setState({
       loader: true
-    })
-    axios.post(host.host + '/api/otes/crear', this.state, {
-      headers: {
-        Authorization: 'Bearer ' + localStorage.getItem("token")
-      }
-    }).then(res => {
-      console.log(res.data);
-      if (res.data == 1) {
-        this.setState({
-          loader: false,
-          mensaje: "Vehículo Inexistente",
-          placaTemporal: true,
-          codigo_acceso: 1
-        })
-      } else {
-        this.props.reload();
-        this.props.onCancelClick();
-      }
+    }, function() {
+      axios.post(host.host + '/api/otes/crear', this.state, {
+        headers: {
+          Authorization: 'Bearer ' + localStorage.getItem("token")
+        }
+      }).then(res => {
+        console.log(res.data);
+        if (res.data == 1) {
+          this.setState({
+            loader: false,
+            mensaje: "Vehículo Inexistente",
+            placaTemporal: true,
+            codigo_acceso: 1
+          })
+        } else {
+          this.props.reload();
+          this.props.onCancelClick();
+        }
+      })
     })
   }
 

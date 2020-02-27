@@ -11,6 +11,7 @@ import LocalCarWashIcon from '@material-ui/icons/LocalCarWash';
 import LocalGasStationIcon from '@material-ui/icons/LocalGasStation';
 import AcUnitIcon from '@material-ui/icons/AcUnit';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import TripOriginIcon from '@material-ui/icons/TripOrigin';
 
 import history from "../../history";
@@ -19,6 +20,8 @@ export default class NavBar extends Component {
 
   constructor(props) {
     super(props);
+    this.area_2 = React.createRef();
+    this.area_1 = React.createRef();
     this.area0 = React.createRef();
     this.area1 = React.createRef();
     this.area2 = React.createRef();
@@ -55,6 +58,8 @@ export default class NavBar extends Component {
   }
 
   setColor() {
+    this.area_2.current.style.background = "#f3f5f9"
+    this.area_1.current.style.background = "#f3f5f9"
     this.area0.current.style.background = "#f3f5f9"
     this.area1.current.style.background = "#f3f5f9"
     this.area2.current.style.background = "#f3f5f9"
@@ -63,6 +68,12 @@ export default class NavBar extends Component {
     this.area5.current.style.background = "#f3f5f9"
     this.area6.current.style.background = "#f3f5f9"
     this.area7.current.style.background = "#f3f5f9"
+    if (this.state.area == -2) {
+      this.area_2.current.style.background = "#e0e2e5"
+    }
+    if (this.state.area == -1) {
+      this.area_1.current.style.background = "#e0e2e5"
+    }
     if (this.state.area == 0) {
       this.area0.current.style.background = "#e0e2e5"
     }
@@ -101,7 +112,7 @@ export default class NavBar extends Component {
 
     let navBarContent = (<div></div>)
 
-    if (this.props.rol_id == 2 || this.props.rol_id == 5 || this.props.rol_id == 4) {
+    if (this.props.rol_id == 5 || this.props.rol_id == 4) {
       navBarContent = (
         <div className={classes.root}>
           <List component="nav" aria-label="main mailbox folders">
@@ -110,6 +121,92 @@ export default class NavBar extends Component {
                 <FormatListBulletedIcon />
               </ListItemIcon>
               <ListItemText primary="Listado de OT" />
+            </ListItem>
+            <Divider />
+            <ListItem ref={this.area1} button onClick={this.setArea.bind(this, 1)}>
+              <ListItemIcon>
+                <LocalShippingIcon />
+              </ListItemIcon>
+              <ListItemText primary="Estructuras" />
+            </ListItem>
+            <Divider />
+            <ListItem ref={this.area2} button onClick={this.setArea.bind(this, 2)}>
+              <ListItemIcon>
+                <LocalCarWashIcon />
+              </ListItemIcon>
+              <ListItemText primary="Lavado y Cambio de Aceite" />
+            </ListItem>
+            <Divider />
+            <ListItem ref={this.area3} button onClick={this.setArea.bind(this, 3)}>
+              <ListItemIcon>
+                <TripOriginIcon />
+              </ListItemIcon>
+              <ListItemText primary="Neumáticos" />
+            </ListItem>
+            <Divider />
+            <ListItem ref={this.area4} button onClick={this.setArea.bind(this, 4)}>
+              <ListItemIcon>
+                <LocalShippingIcon />
+              </ListItemIcon>
+              <ListItemText primary="Mantenimiento Pesado" />
+            </ListItem>
+            <Divider />
+            <ListItem ref={this.area5} button onClick={this.setArea.bind(this, 5)}>
+              <ListItemIcon>
+                <LocalShippingIcon />
+              </ListItemIcon>
+              <ListItemText primary="Mantenimiento Liviano" />
+            </ListItem>
+            <Divider />
+            <ListItem ref={this.area6} button onClick={this.setArea.bind(this, 6)}>
+              <ListItemIcon>
+                <LocalGasStationIcon />
+              </ListItemIcon>
+              <ListItemText primary="Mantenimiento de Gas" />
+            </ListItem>
+            <Divider />
+            <ListItem ref={this.area7} button onClick={this.setArea.bind(this, 7)}>
+              <ListItemIcon>
+                <AcUnitIcon />
+              </ListItemIcon>
+              <ListItemText primary="Fríos" />
+            </ListItem>
+            <Divider />
+            <ListItem button onClick={this.cerrarSesion}>
+              <ListItemIcon>
+                <ExitToAppIcon />
+              </ListItemIcon>
+              <ListItemText primary="Cerrar Sesión" />
+            </ListItem>
+            <Divider />
+          </List>
+        </div>
+      )
+    }
+
+    if (this.props.rol_id == 2) {
+      navBarContent = (
+        <div className={classes.root}>
+          <List component="nav" aria-label="main mailbox folders">
+            <ListItem ref={this.area0} button onClick={this.setArea.bind(this, 0)}>
+              <ListItemIcon>
+                <FormatListBulletedIcon />
+              </ListItemIcon>
+              <ListItemText primary="Listado de OT" />
+            </ListItem>
+            <Divider />
+            <ListItem ref={this.area_1} button onClick={this.setArea.bind(this, -1)}>
+              <ListItemIcon>
+                <AccountCircleIcon />
+              </ListItemIcon>
+              <ListItemText primary="Administrar Usuarios" />
+            </ListItem>
+            <Divider />
+            <ListItem ref={this.area_2} button onClick={this.setArea.bind(this, -2)}>
+              <ListItemIcon>
+                <AccountCircleIcon />
+              </ListItemIcon>
+              <ListItemText primary="Administrar Trabajadores" />
             </ListItem>
             <Divider />
             <ListItem ref={this.area1} button onClick={this.setArea.bind(this, 1)}>

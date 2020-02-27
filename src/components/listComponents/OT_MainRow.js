@@ -13,6 +13,10 @@ export default class OT_MainRow extends Component {
     }
   }
 
+  componentWillMount() {
+    console.log(this.props.rowData);
+  }
+
   showDetail() {
     history.push("ot_detail/" + this.state.data.id)
   }
@@ -28,9 +32,21 @@ export default class OT_MainRow extends Component {
       "Gas",
       "Frios"
     ]
+    let tipos = [
+      "",
+      "Motocicleta",
+      "Remolcador",
+      "Semiremolque",
+      "Camión",
+      "Camioneta",
+      "Van",
+      "Microbus",
+      "Minivan",
+      "Bus"
+    ]
     return(
       <tr className="mainRow" onClick={this.showDetail.bind(this)}>
-        <td>{this.state.data.id}</td>
+        <td>{this.state.data.correlativo}</td>
         <td>{this.state.data.fecha_ingreso}</td>
         <td>{this.state.data.h_ingreso}</td>
         {this.state.data.vehiculo_id ?

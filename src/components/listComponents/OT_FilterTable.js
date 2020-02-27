@@ -302,6 +302,7 @@ export default class OT_FilterTable extends Component {
             solicitud={this.state.solicitud}
             isPopupOpen={this.state.materialList}
             asignClose={this.asignClose}
+            state={this.props.state}
           />
           : null
         }
@@ -424,41 +425,41 @@ export default class OT_FilterTable extends Component {
               <div style={{display: "inline-grid"}}>
                 {(this.props.rol == 3 || this.props.rol == 5) && (this.props.state == 1 || this.props.state == 2 || this.props.state == 4)?
                   <div style={{display: "inline-grid"}}>
-                    <button class="ui button" style={{background: "#16a1b9", color: "#fff", marginTop: "4px", marginBottom: "4px"}} onClick={this.onDateHourOpen}>Programar Fechas</button>
+                    <button class="ui button" style={{background: "#16a1b9", color: "#fff", marginTop: "4px", marginBottom: "4px", marginLeft: "4px"}} onClick={this.onDateHourOpen}>Programar Fechas</button>
                   </div>
                   : null
                 }
                 {(this.props.rol == 3 || this.props.rol == 5) && this.props.state == 1 ?
-                  <button class="ui red button" onClick={this.showEmployeeList.bind(this)} style={{marginTop: "4px", marginBottom: "4px"}}>Asignar Trabajadores</button>
+                  <button class="ui red button" onClick={this.showEmployeeList.bind(this)} style={{marginTop: "4px", marginBottom: "4px", marginLeft: "4px"}}>Asignar Trabajadores</button>
                   : null
                 }
                 {this.props.state == 4 && this.props.rol == 5 ?
                   <div style={{display: "inline-grid"}}>
-                    <button class="ui red button" onClick={this.toggleSeviceList.bind(this)} style={{marginTop: "4px", marginBottom: "4px"}}>Servicio a Realizar</button>
-                    <button class="ui button" style={{background: "#ff5e00", color: "#fff", marginTop: "4px", marginBottom: "4px"}} onClick={this.revision.bind(this)}>Enviar a Revisión</button>
+                    <button class="ui red button" onClick={this.toggleSeviceList.bind(this)} style={{marginTop: "4px", marginBottom: "4px", marginLeft: "4px"}}>Servicio a Realizar</button>
+                    <button class="ui button" style={{background: "#ff5e00", color: "#fff", marginTop: "4px", marginBottom: "4px", marginLeft: "4px"}} onClick={this.revision.bind(this)}>Enviar a Revisión</button>
                   </div>
                   : null
                 }
-                {this.props.state == 5 ?
-                  <button class="ui red button" onClick={this.toggleSeviceList.bind(this)} style={{marginTop: "4px", marginBottom: "4px"}}>Servicio a Realizar</button>
+                {(this.props.state == 5 || this.props.state == 6) ?
+                  <button class="ui red button" onClick={this.toggleSeviceList.bind(this)} style={{marginTop: "4px", marginBottom: "4px", marginLeft: "4px"}}>Servicio a Realizar</button>
                   : null
                 }
                 {this.props.state == 5 && this.props.rol == 5 ?
                   <div style={{display: "inline-grid"}}>
-                    <button class="ui button" style={{background: "#9d00ff", color: "#fff", marginTop: "4px", marginBottom: "4px"}} onClick={this.darAlta.bind(this)}>Dar de Alta</button>
-                    <button class="ui button" style={{background: "#fec106", color: "#fff", marginTop: "4px", marginBottom: "4px"}} onClick={this.regresarProceso.bind(this)}>Regresar a Mantenimiento</button>
+                    <button class="ui button" style={{background: "#9d00ff", color: "#fff", marginTop: "4px", marginBottom: "4px", marginLeft: "4px"}} onClick={this.darAlta.bind(this)}>Dar de Alta</button>
+                    <button class="ui button" style={{background: "#fec106", color: "#fff", marginTop: "4px", marginBottom: "4px", marginLeft: "4px"}} onClick={this.regresarProceso.bind(this)}>Regresar a Mantenimiento</button>
                   </div>
                   : null
                 }
                 {(this.state.solicitud && (this.props.rol == 3 || this.props.rol == 5)) & (this.props.state == 4 || this.props.state == 2)?
-                  <button class="ui green button" onClick={this.showMaterialList.bind(this)} style={{marginTop: "4px", marginBottom: "4px"}}>Listar Materiales</button>
+                  <button class="ui green button" onClick={this.showMaterialList.bind(this)} style={{marginTop: "4px", marginBottom: "4px", marginLeft: "4px"}}>Listar Materiales</button>
                   :
                   <div>
                     {(this.props.state == 2 && this.props.rol == 5) || (this.props.state == 2 && this.props.rol == 3) ?
                       <div style={{display: "inline-grid"}}>
-                        <button class="ui green button" onClick={this.materialOpen} style={{marginTop: "4px", marginBottom: "4px"}}>Solicitar Materiales</button>
+                        <button class="ui green button" onClick={this.materialOpen} style={{marginTop: "4px", marginBottom: "4px", marginLeft: "4px"}}>Solicitar Materiales</button>
                         {!this.state.selectedRowData.f_inicio_real ?
-                          <button class="ui red button" onClick={this.start.bind(this)} style={{marginTop: "4px", marginBottom: "4px"}}>Iniciar Mantenimiento</button>
+                          <button class="ui red button" onClick={this.start.bind(this)} style={{marginTop: "4px", marginBottom: "4px", marginLeft: "4px"}}>Iniciar Mantenimiento</button>
                           : null
                         }
                       </div>

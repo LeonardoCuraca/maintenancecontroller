@@ -220,8 +220,8 @@ export default class AsignMaterialModal extends Component {
                 <table class="ui very basic collapsing celled table">
                   <thead>
                     <tr>
-                      <th>Materiales Solicitados</th>
-                      <th>Cantidad Solicitada</th>
+                      <th>Materiales Asignados</th>
+                      <th>Cantidad Asignada</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -229,10 +229,16 @@ export default class AsignMaterialModal extends Component {
                     return(
                       <tr>
                         <td>
-                          <Input type="text" placeholder="Nombre" value={this.state.materiales[i].asignada} onChange={(e) => this.changeARow(e, i)}/>
+                          {this.props.state != 4 ?
+                            <Input type="text" placeholder="Nombre" value={this.state.materiales[i].asignada} onChange={(e) => this.changeARow(e, i)}/>
+                            : this.state.materiales[i].asignada
+                          }
                         </td>
                         <td>
-                          <Input type="number" placeholder="Cantidad" min="1" value={this.state.materiales[i].cantidad_asignada} onChange={(e) => this.changeCRow(e, i)}/>
+                          {this.props.state != 4 ?
+                            <Input type="number" placeholder="Cantidad" min="1" value={this.state.materiales[i].cantidad_asignada} onChange={(e) => this.changeCRow(e, i)}/>
+                            : this.state.materiales[i].cantidad_asignada
+                          }
                         </td>
                       </tr>
                     )

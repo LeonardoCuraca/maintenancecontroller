@@ -5,6 +5,8 @@ import OT_FilterTable from "./listComponents/OT_FilterTable";
 import MainCards from "./listComponents/MainCards";
 import Loader from "./animation/Loader";
 import OT_Main from "./listComponents/OT_Main";
+import AdminUsersView from "./listComponents/AdminUsersView";
+import AdminEmployeesView from "./listComponents/AdminEmployeesView";
 import * as host from './host.js';
 
 import "./style/MainMenu.css";
@@ -237,7 +239,7 @@ export default class MainMenu extends Component {
               }
               </div>
             </div>
-            {this.state.area != 0 ?
+            {this.state.area > 0 ?
               <div className="content">
                 <div className="cardsCol">
                   <div className="cardsContainer">
@@ -309,7 +311,21 @@ export default class MainMenu extends Component {
                   }
                 </div>
               </div>
-              : <OT_Main/>
+              :
+              <div>
+                {this.state.area == 0 ?
+                  <OT_Main />
+                  : null
+                }
+                {this.state.area == -1 ?
+                  <AdminUsersView />
+                  : null
+                }
+                {this.state.area == -2 ?
+                  <AdminEmployeesView />
+                  : null
+                }
+              </div>
             }
           </div>
         </div>

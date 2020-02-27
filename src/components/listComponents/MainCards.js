@@ -22,7 +22,7 @@ export default class MainCards extends Component {
           <div onClick={this.props.showRed} style={{cursor: "pointer", height: "100%", background: "#dc3547", boxShadow: '3px 4px 5px 0px rgba(0,0,0,0.25)'}} className="ui card">
             <div style={{padding: "4px"}} className="ui statistic">
               <div style={{color: "#f3f5f9"}} className="value">
-                <i style={{fontSize: "48px"}} aria-hidden="true" className="configure icon"/>
+                <i style={{fontSize: "48px"}} aria-hidden="true" className="pencil icon"/>
               </div>
               <div style={{color: "#f3f5f9"}} className="label">En Revisión</div>
             </div>
@@ -41,7 +41,7 @@ export default class MainCards extends Component {
           <div onClick={this.props.showYellow} style={{cursor: "pointer", height: "100%", background: "#fec106", boxShadow: '3px 4px 5px 0px rgba(0,0,0,0.25)'}} className="ui card">
             <div style={{padding: "4px"}} className="ui statistic">
               <div style={{color: "#f3f5f9"}} className="value">
-                <i style={{fontSize: "48px"}} aria-hidden="true" className="stopwatch icon"/>
+                <i style={{fontSize: "48px"}} aria-hidden="true" className="configure icon"/>
               </div>
               <div style={{color: "#f3f5f9"}} className="label">En Proceso</div>
             </div>
@@ -52,7 +52,7 @@ export default class MainCards extends Component {
           <div onClick={this.props.showOrange} style={{cursor: "pointer", height: "100%", background: "#ff5e00", boxShadow: '3px 4px 5px 0px rgba(0,0,0,0.25)'}} className="ui card">
             <div style={{padding: "4px"}} className="ui statistic">
               <div style={{color: "#f3f5f9"}} className="value">
-                <i style={{fontSize: "48px"}} aria-hidden="true" className="pencil icon"/>
+                <i style={{fontSize: "48px"}} aria-hidden="true" className="stopwatch icon"/>
               </div>
               <div style={{color: "#f3f5f9"}} className="label">Finalizados</div>
             </div>
@@ -63,7 +63,7 @@ export default class MainCards extends Component {
           <div onClick={this.props.showPurple} style={{cursor: "pointer", height: "100%", background: "#9d00ff", boxShadow: '3px 4px 5px 0px rgba(0,0,0,0.25)'}} className="ui card">
             <div style={{padding: "4px"}} className="ui statistic">
               <div style={{color: "#f3f5f9"}} className="value">
-                <i style={{fontSize: "48px"}} aria-hidden="true" className="wait icon"/>
+                <i style={{fontSize: "48px"}} aria-hidden="true" className="clipboard check icon"/>
               </div>
               <div style={{color: "#f3f5f9"}} className="label">Dados de Alta</div>
             </div>

@@ -66,7 +66,7 @@ export default class OT_RequirementsRow extends Component {
           </td>
           : null
         }
-        {this.props.rol === 5 && this.props.state === 2 ?
+        {this.props.rol === 5 && this.props.state === 4 ?
           <td className="right aligned collapsing" onClick={this.sendPercent}>
             <div className="ui small basic icon buttons">
               <button className="ui button"><i style={{color: this.state.color}} className="check icon"></i></button>

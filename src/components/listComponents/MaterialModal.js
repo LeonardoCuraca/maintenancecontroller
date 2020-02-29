@@ -130,11 +130,10 @@ export default class MaterialModal extends Component {
         console.log(this.state.solicitud);
         for (var i = 0; i < this.state.materiales.length; i++) {
           let material = {
-            solicitud_id: this.state.solicitud,
             solicitada: this.state.materiales[i],
             cantidad_solicitada: this.state.cantidades[i]
           }
-          axios.post(host.host + '/api/m_solicitado/crear/', material, {
+          axios.post(host.host + '/api/m_solicitado/solicitud/crear/' + this.state.solicitud, material, {
             headers: {
               Authorization: 'Bearer ' + localStorage.getItem("token")
             }

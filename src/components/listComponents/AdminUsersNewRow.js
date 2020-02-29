@@ -11,7 +11,7 @@ export default class AdminUsersNewRow extends Component {
       password: "",
       password_confirmation: "",
       rol_id: 1,
-      area_id: 0,
+      area_id: 1,
     }
   }
 

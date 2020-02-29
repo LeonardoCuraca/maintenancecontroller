@@ -15,6 +15,7 @@ export default class AdminEmployeesRow extends Component {
   }
 
   componentWillMount() {
+    console.log(this.props.data.estado);
     this.setState({
       nombres: this.props.data.nombres,
       apellidos: this.props.data.apellidos,
@@ -54,12 +55,6 @@ export default class AdminEmployeesRow extends Component {
 
     return(
       <tr onClick={this.showData.bind(this)}>
-      <div class="ui segment">
-        <p></p>
-        <div class="ui active dimmer">
-          <div class="ui loader"></div>
-        </div>
-      </div>
         {this.state.estado == 1 ?
           <td class="collapsing">
             <div class="ui fitted slider checkbox">

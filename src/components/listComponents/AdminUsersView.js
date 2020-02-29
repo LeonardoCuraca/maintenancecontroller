@@ -170,8 +170,15 @@ export default class AdminUsersView extends Component {
           <tbody>
             {this.state.users.map(user => {
 
+              var state = false;
+
+              if (user.estado === 1) {
+                state = true
+              }
+
               return(
                 <AdminUsersRow
+                  state = {state}
                   reload = {this.componentWillMount.bind(this)}
                   data = {user}
                 />

@@ -55,31 +55,17 @@ export default class AdminUsersRow extends Component {
 
     return(
       <tr onClick={this.showData.bind(this)}>
-        {this.props.data.rol_id === 3 ?
-          <td class="collapsing" style={{background: "radial-gradient(#ffabab, transparent)"}}>
-            {this.props.data.estado === 1 ?
+          <td class="collapsing" onChange={this.toggleState.bind(this)}>
+            {this.state.estado == 1 ?
               <div class="ui fitted slider checkbox">
-                <input type="checkbox" checked onChange={this.props.notify} /><label></label>
+                <input type="checkbox" checked onChange={this.toggleState.bind(this)} /><label></label>
               </div>
               :
               <div class="ui fitted slider checkbox">
-                <input type="checkbox" onChange={this.props.notify} /><label></label>
+                <input type="checkbox" onChange={this.toggleState.bind(this)} /><label></label>
               </div>
             }
           </td>
-          :
-          <td class="collapsing">
-          {this.props.data.estado === 1 ?
-            <div class="ui fitted slider checkbox">
-              <input type="checkbox" checked onChange={this.toggleState.bind(this)} /><label></label>
-            </div>
-            :
-            <div class="ui fitted slider checkbox">
-              <input type="checkbox" onChange={this.toggleState.bind(this)} /><label></label>
-            </div>
-          }
-          </td>
-        }
         <td>{this.state.nombre}</td>
         <td>{this.state.email}</td>
         <td style={{color: this.state.color}}>{roles[this.state.rol_id - 1]}</td>

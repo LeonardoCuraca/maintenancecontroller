@@ -21,9 +21,13 @@ export default class AdminEmployeesView extends Component {
   }
 
   componentWillMount() {
-    axios.get(host.host + '/api/empleado').then(res => {
-      this.setState({
-        employees: res.data.data
+    this.setState({
+      employees: []
+    }, function() {
+      axios.get(host.host + '/api/empleado').then(res => {
+        this.setState({
+          employees: res.data.data
+        })
       })
     })
   }

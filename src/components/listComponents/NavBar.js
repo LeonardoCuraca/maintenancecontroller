@@ -20,8 +20,9 @@ export default class NavBar extends Component {
 
   constructor(props) {
     super(props);
-    this.area_2 = React.createRef();
-    this.area_1 = React.createRef();
+    this.area8 = React.createRef();
+    this.area9 = React.createRef();
+    this.area10 = React.createRef();
     this.area0 = React.createRef();
     this.area1 = React.createRef();
     this.area2 = React.createRef();
@@ -34,6 +35,7 @@ export default class NavBar extends Component {
       area: 0
     }
   }
+
 
   ListItemLink(props) {
     return <ListItem button component="a" {...props} />;
@@ -53,13 +55,16 @@ export default class NavBar extends Component {
       area: area
     }, function() {
       this.sendSelectedArea();
-      this.setColor();
+      if (this.props.rol_id != 3) {
+        this.setColor();
+      }
     })
   }
 
   setColor() {
-    this.area_2.current.style.background = "#f3f5f9"
-    this.area_1.current.style.background = "#f3f5f9"
+    this.area8.current.style.background = "#f3f5f9"
+    this.area9.current.style.background = "#f3f5f9"
+    this.area10.current.style.background = "#f3f5f9"
     this.area0.current.style.background = "#f3f5f9"
     this.area1.current.style.background = "#f3f5f9"
     this.area2.current.style.background = "#f3f5f9"
@@ -68,11 +73,14 @@ export default class NavBar extends Component {
     this.area5.current.style.background = "#f3f5f9"
     this.area6.current.style.background = "#f3f5f9"
     this.area7.current.style.background = "#f3f5f9"
-    if (this.state.area == -2) {
-      this.area_2.current.style.background = "#e0e2e5"
+    if (this.state.area == 8) {
+      this.area8.current.style.background = "#e0e2e5"
     }
-    if (this.state.area == -1) {
-      this.area_1.current.style.background = "#e0e2e5"
+    if (this.state.area == 9) {
+      this.area9.current.style.background = "#e0e2e5"
+    }
+    if (this.state.area == 10) {
+      this.area10.current.style.background = "#e0e2e5"
     }
     if (this.state.area == 0) {
       this.area0.current.style.background = "#e0e2e5"
@@ -123,6 +131,27 @@ export default class NavBar extends Component {
               <ListItemText primary="Listado de OT" />
             </ListItem>
             <Divider />
+            <ListItem style={{display: "none"}} ref={this.area8} button onClick={this.setArea.bind(this, 8)}>
+              <ListItemIcon>
+                <AccountCircleIcon />
+              </ListItemIcon>
+              <ListItemText primary="Administrar Usuarios" />
+            </ListItem>
+            <Divider style={{display: "none"}} />
+            <ListItem style={{display: "none"}} ref={this.area9} button onClick={this.setArea.bind(this, 9)}>
+              <ListItemIcon>
+                <AccountCircleIcon />
+              </ListItemIcon>
+              <ListItemText primary="Administrar Trabajadores" />
+            </ListItem>
+            <Divider style={{display: "none"}} />
+            <ListItem  style={{display: "none"}} ref={this.area10} button onClick={this.setArea.bind(this, 10)}>
+              <ListItemIcon>
+                <AccountCircleIcon />
+              </ListItemIcon>
+              <ListItemText primary="Administrar Áreas" />
+            </ListItem>
+            <Divider style={{display: "none"}} />
             <ListItem ref={this.area1} button onClick={this.setArea.bind(this, 1)}>
               <ListItemIcon>
                 <LocalShippingIcon />
@@ -195,18 +224,25 @@ export default class NavBar extends Component {
               <ListItemText primary="Listado de OT" />
             </ListItem>
             <Divider />
-            <ListItem ref={this.area_1} button onClick={this.setArea.bind(this, -1)}>
+            <ListItem ref={this.area8} button onClick={this.setArea.bind(this, 8)}>
               <ListItemIcon>
                 <AccountCircleIcon />
               </ListItemIcon>
               <ListItemText primary="Administrar Usuarios" />
             </ListItem>
             <Divider />
-            <ListItem ref={this.area_2} button onClick={this.setArea.bind(this, -2)}>
+            <ListItem ref={this.area9} button onClick={this.setArea.bind(this, 9)}>
               <ListItemIcon>
                 <AccountCircleIcon />
               </ListItemIcon>
               <ListItemText primary="Administrar Trabajadores" />
+            </ListItem>
+            <Divider />
+            <ListItem ref={this.area10} button onClick={this.setArea.bind(this, 10)}>
+              <ListItemIcon>
+                <AccountCircleIcon />
+              </ListItemIcon>
+              <ListItemText primary="Administrar Áreas" />
             </ListItem>
             <Divider />
             <ListItem ref={this.area1} button onClick={this.setArea.bind(this, 1)}>
@@ -271,17 +307,21 @@ export default class NavBar extends Component {
     }
 
     if (this.props.rol_id == 3) {
+      var area = this.props.area;
+      if (area < 0) {
+        area = area * -1
+      }
       navBarContent = (
         <div className={classes.root}>
           <List component="nav" aria-label="main mailbox folders">
-            <ListItem button>
+            <ListItem button onClick={this.setArea.bind(this, area)}>
               <ListItemIcon>
                 <FormatListBulletedIcon />
               </ListItemIcon>
-              <ListItemText primary="Listado de OT" />
+              <ListItemText primary="Patio" />
             </ListItem>
             <Divider />
-            <ListItem button>
+            <ListItem button onClick={this.setArea.bind(this, this.props.area * -1)}>
               <ListItemIcon>
                 <LocalShippingIcon />
               </ListItemIcon>

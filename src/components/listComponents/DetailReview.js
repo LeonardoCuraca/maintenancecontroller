@@ -11,14 +11,7 @@ import {
   ModalFooter,
   Label,
   Input,
-  Card,
-  CardBody,
-  CardHeader,
-  CardTitle,
-  CardText,
-  CardFooter,
-  Form,
-  FormText
+  Form
 } from "reactstrap";
 
 class DetailReview extends Component {

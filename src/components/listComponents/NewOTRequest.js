@@ -8,18 +8,7 @@ import {
   Row,
   Col,
   ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Label,
-  Input,
-  Card,
-  CardBody,
-  CardHeader,
-  CardTitle,
-  CardText,
-  CardFooter,
-  Form,
-  FormText
+  ModalFooter
 } from "reactstrap";
 
 class NewOTRequest extends Component {

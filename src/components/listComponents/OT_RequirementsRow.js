@@ -25,12 +25,12 @@ export default class OT_RequirementsRow extends Component {
       }
     }).then(res => {
       console.log(res.data);
-      if (this.state.color == "#737373") {
+      if (this.state.color === "#737373") {
         console.log(this.props.tableColor);
         this.setState({
           color: this.props.tableColor
         })
-      } else if (this.state.color == this.props.tableColor) {
+      } else if (this.state.color === this.props.tableColor) {
         console.log("#737373");
         this.setState({
           color: "#737373"
@@ -58,7 +58,7 @@ export default class OT_RequirementsRow extends Component {
           </div>
         </td>
         <td style={{verticalAlign: "middle"}}>{this.props.data.descripcion}</td>
-        {this.props.state == 1 && this.props.rol == 5 ?
+        {this.props.state === 1 && this.props.rol === 5 ?
           <td className="right aligned collapsing" style={{zIndex: 30}} onClick={this.deleteRow.bind(this, this.props.data.id)}>
             <div className="ui small basic icon buttons">
               <button className="ui button"><i style={{color: "red"}} class="trash alternate outline icon"></i></button>
@@ -66,7 +66,7 @@ export default class OT_RequirementsRow extends Component {
           </td>
           : null
         }
-        {this.props.rol == 5 && this.props.state == 2 ?
+        {this.props.rol === 5 && this.props.state === 2 ?
           <td className="right aligned collapsing" style={{zIndex: 30}} onClick={this.sendPercent}>
             <div className="ui small basic icon buttons">
               <button className="ui button"><i style={{color: this.state.color}} className="check icon"></i></button>
@@ -74,7 +74,7 @@ export default class OT_RequirementsRow extends Component {
           </td>
           : null
         }
-        {this.props.rol == 5 && (this.props.state == 5 || this.props.state == 6) && this.state.color != "#737373" ?
+        {this.props.rol === 5 && (this.props.state === 5 || this.props.state === 6) && this.state.color != "#737373" ?
           <td className="right aligned collapsing" style={{zIndex: 30}}>
             <div className="ui small basic icon buttons">
               <button className="ui button"><i style={{color: this.state.color}} className="check icon"></i></button>

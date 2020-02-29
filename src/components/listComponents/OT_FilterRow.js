@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import "./style/OT_FilterRow.css";
 
 export default class OT_FilterRow extends Component {
@@ -31,7 +30,7 @@ export default class OT_FilterRow extends Component {
         }
         <td style={{paddingTop: "12px", paddingBottom: "12px"}} className="">{this.state.rowData.tipo_vehiculo}</td>
         <td style={{paddingTop: "12px", paddingBottom: "12px"}} className="">{this.state.rowData.operacion}</td>
-        {this.props.state != 4 ?
+        {this.props.state !== 4 ?
           <td style={{paddingTop: "12px", paddingBottom: "12px"}} className="">
             {Math.round(this.state.rowData.aprobadas)}%
           </td>
@@ -40,11 +39,11 @@ export default class OT_FilterRow extends Component {
             {Math.round(this.state.rowData.progreso_tareas)}%
           </td>
         }
-        {this.props.state == 1 ?
+        {this.props.state === 1 ?
           <td style={{paddingTop: "12px", paddingBottom: "12px"}} className="">{this.state.rowData.fecha_ingreso}</td>
           : null
         }
-        {this.props.state == 1 ?
+        {this.props.state === 1 ?
           <td style={{paddingTop: "12px", paddingBottom: "12px"}} className="">{this.state.rowData.h_ingreso}</td>
           : null
         }

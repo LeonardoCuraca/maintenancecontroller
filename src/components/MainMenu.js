@@ -7,6 +7,8 @@ import Loader from "./animation/Loader";
 import OT_Main from "./listComponents/OT_Main";
 import AdminUsersView from "./listComponents/AdminUsersView";
 import AdminEmployeesView from "./listComponents/AdminEmployeesView";
+import AdminAreaView from "./listComponents/AdminAreaView";
+import LubricantesTable from "./listComponents/LubricantesTable";
 import * as host from './host.js';
 
 import "./style/MainMenu.css";
@@ -202,6 +204,7 @@ export default class MainMenu extends Component {
           <div style={{background: "#f3f5f9"}} ref={this.sidenav} className="sidenav">
             <NavBar
               rol_id = {this.state.rol_id}
+              area = {this.state.area}
               selectArea = {this.selectArea}
             />
           </div>
@@ -239,7 +242,7 @@ export default class MainMenu extends Component {
               }
               </div>
             </div>
-            {this.state.area > 0 ?
+            {this.state.area > 0 && this.state.area != 9 && this.state.area != 8 && this.state.area != 10 ?
               <div className="content">
                 <div className="cardsCol">
                   <div className="cardsContainer">
@@ -315,15 +318,31 @@ export default class MainMenu extends Component {
               <div>
                 {this.state.area == 0 ?
                   <OT_Main />
-                  : null
-                }
-                {this.state.area == -1 ?
-                  <AdminUsersView />
-                  : null
-                }
-                {this.state.area == -2 ?
-                  <AdminEmployeesView />
-                  : null
+                  :
+                  <div>
+                    {this.state.area == 8 ?
+                      <AdminUsersView />
+                      : null
+                    }
+                    {this.state.area == 9 ?
+                      <AdminEmployeesView />
+                      : null
+                    }
+                    {this.state.area == 10 ?
+                      <AdminAreaView />
+                      : null
+                    }
+                    {this.state.area < 0 ?
+                      <div>
+                        {this.state.area == -2 && this.state.area < 0 ?
+                          <LubricantesTable />
+                          :
+                          <div>Proximamente</div>
+                        }
+                      </div>
+                      : null
+                    }
+                  </div>
                 }
               </div>
             }

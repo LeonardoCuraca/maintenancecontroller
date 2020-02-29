@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import * as host from '../host';
 
 export default class OT_RequirementsRow extends Component {
 
@@ -23,7 +21,7 @@ export default class OT_RequirementsRow extends Component {
 
   setEmployee(id) {
     this.asignEmployee(id);
-    if (this.state.asigned == true) {
+    if (this.state.asigned === true) {
       this.setState({
         color: "",
         asigned: false

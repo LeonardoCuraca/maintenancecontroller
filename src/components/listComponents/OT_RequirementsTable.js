@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import OT_RequirementsRow from "./OT_RequirementsRow";
-import OT_NewRequirementsRow from "./OT_NewRequirementsRow";
+import OTRequirementsRow from "./OT_RequirementsRow";
+import OTNewRequirementsRow from "./OT_NewRequirementsRow";
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import * as host from '../host';
 
@@ -29,7 +29,7 @@ export default class OT_RequirementsTable extends Component {
       var complete = 0;
       for (var i = 0; i < res.data.length; i++) {
         total = total + 1;
-        if (res.data[i].conformidad == 1) {
+        if (res.data[i].conformidad === 1) {
           complete = complete + 1;
         }
       }
@@ -57,7 +57,7 @@ export default class OT_RequirementsTable extends Component {
       var complete = 0;
       for (var i = 0; i < res.data.length; i++) {
         total = total + 1;
-        if (res.data[i].conformidad == 1) {
+        if (res.data[i].conformidad === 1) {
           complete = complete + 1;
         }
       }
@@ -94,7 +94,7 @@ export default class OT_RequirementsTable extends Component {
   }
 
   selectRequirement = (req) => {
-    if (req.id == this.state.selectedRequirement.id) {
+    if (req.id === this.state.selectedRequirement.id) {
       this.setState({
         selectedRequirement: [],
         tempObservacion: ""
@@ -165,10 +165,10 @@ export default class OT_RequirementsTable extends Component {
             <tr>
               <th colspan="4">
                 Prediagnóstico
-                {this.props.rol == 5 && this.props.state == 1 ?
-                  <a style={{float: "right", cursor: "pointer"}} class="item" onClick={this.toggleNewRequirement.bind(this)}>
+                {this.props.rol === 5 && this.props.state === 1 ?
+                  <button style={{float: "right", cursor: "pointer"}} class="item" onClick={this.toggleNewRequirement.bind(this)}>
                     <i class="icon add"></i>
-                  </a>
+                  </button>
                   : null
                 }
               </th>
@@ -178,11 +178,11 @@ export default class OT_RequirementsTable extends Component {
             <tbody>
               {this.state.data.map(row => {
                 var color = "#737373";
-                if (row.conformidad == 1) {
+                if (row.conformidad === 1) {
                   color = this.props.color
                 }
                 return(
-                  <OT_RequirementsRow
+                  <OTRequirementsRow
                     data = {row}
                     color = {color}
                     tableColor = {this.props.color}
@@ -195,7 +195,7 @@ export default class OT_RequirementsTable extends Component {
                 )
               })}
               {this.state.newRequirement ?
-                <OT_NewRequirementsRow
+                <OTNewRequirementsRow
                   otid = {this.props.id}
                   reload = {this.reload.bind(this)}
                   rol = {this.props.rol}
@@ -206,11 +206,11 @@ export default class OT_RequirementsTable extends Component {
             : null
           }
         </table>
-        {this.state.selectedRequirement.length != 0 ?
+        {this.state.selectedRequirement.length !== 0 ?
           <TextareaAutosize style={{width: "100%", marginTop: "-16px"}} aria-label="empty textarea" placeholder="Observaciones" defaultValue={this.state.tempObservacion} onChange={this.changeReview.bind(this)} />
           : null
         }
-        {(this.state.tempObservacion != this.state.selectedRequirement.observaciones) && this.state.selectedRequirement.length != 0 ?
+        {(this.state.tempObservacion !== this.state.selectedRequirement.observaciones) && this.state.selectedRequirement.length !== 0 ?
           <button onClick={this.updateObservacion.bind(this)}>Actualizar</button>
           : null
         }

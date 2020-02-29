@@ -13,14 +13,7 @@ import {
   ModalFooter,
   Label,
   Input,
-  Card,
-  CardBody,
-  CardHeader,
-  CardTitle,
-  CardText,
-  CardFooter,
-  Form,
-  FormText
+  Form
 } from "reactstrap";
 
 export default class MaterialModal extends Component {
@@ -122,10 +115,10 @@ export default class MaterialModal extends Component {
     let solicitud = {
       solicitante: this.state.solicitante,
       fecha: this.state.fecha,
-      hora: this.state.hora,
-      ot_id: this.state.ot_id
+      hora: this.state.hora
     }
-    axios.post(host.host + '/api/solicitud/crear/', solicitud, {
+    console.log(solicitud);
+    axios.post(host.host + '/api/solicitud/ordentrabajo/crear/' + this.state.ot_id, solicitud, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem("token")
       }

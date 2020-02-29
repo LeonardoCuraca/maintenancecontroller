@@ -1,29 +1,25 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import AdminEmployeesNewRow from "./AdminEmployeesNewRow";
-import AdminEmployeesRow from "./AdminEmployeesRow";
+import AdminAreaRow from "./AdminAreaRow";
 import Mensaje from "./Mensaje";
 
 import * as host from '../host';
 
-export default class AdminEmployeesView extends Component {
+export default class AdminAreaView extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      employees: [],
-      newEmployeeRowData: [],
-      newEmployeeRow: false,
-      buttons: true,
+      areas: [],
       mensaje: false
     }
   }
 
   componentWillMount() {
-    axios.get(host.host + '/api/empleado').then(res => {
+    axios.get(host.host + '/api/area').then(res => {
       this.setState({
-        employees: res.data.data
+        areas: res.data.data
       })
     })
   }
@@ -78,22 +74,21 @@ export default class AdminEmployeesView extends Component {
 
     return(
       <div>
-        <table class="ui compact celled definition table">
+        <table class="ui compact celled table">
           <thead>
             <tr>
-              <th></th>
-              <th>Nombres</th>
-              <th>Apellidos</th>
               <th>Área</th>
+              <th>Encargado</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
-            {this.state.employees.map(employee => {
+            {this.state.areas.map(area => {
 
               return(
-                <AdminEmployeesRow
+                <AdminAreaRow
                   reload = {this.componentWillMount.bind(this)}
-                  data = {employee}
+                  data = {area}
                 />
               )
 
@@ -112,35 +107,6 @@ export default class AdminEmployeesView extends Component {
               </tr>
               : null
             }
-            {this.state.newEmployeeRow ?
-              <AdminEmployeesNewRow
-              setNewEmployeeRowData = {this.setNewEmployeeRowData}/>
-              : null
-            }
-            <tr>
-              <th></th>
-                <th colspan="4">
-                  {this.state.newEmployeeRow ?
-                    <div class="ui right floated buttons">
-                      {this.state.buttons ?
-                        <button class="ui negative button">Cancel</button>
-                        :
-                        <button class="ui negative disabled button">Cancel</button>
-                      }
-                      <div class="or"></div>
-                      {this.state.buttons ?
-                        <button class="ui positive button" onClick={this.createEmployee.bind(this)}>Save</button>
-                        :
-                        <button class="ui positive disabled button" onClick={this.createEmployee.bind(this)}>Save</button>
-                      }
-                    </div>
-                    :
-                    <div class="ui right floated small primary labeled icon button" onClick={this.newEmployee.bind(this)}>
-                      <i class="user icon"></i> Crear Usuario
-                    </div>
-                  }
-                </th>
-            </tr>
           </tfoot>
         </table>
       </div>

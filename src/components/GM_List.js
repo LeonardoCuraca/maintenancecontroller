@@ -25,7 +25,7 @@ export default class GM_List extends Component {
     this.main.current.style.marginLeft = "0";
   }
   toggleNav() {
-    if (this.state.navOpen == true) {
+    if (this.state.navOpen === true) {
       this.sidenav.current.style.width = "0";
       this.main.current.style.marginLeft = "0";
     } else {
@@ -43,11 +43,11 @@ export default class GM_List extends Component {
           <NavBar/>
         </div>
         <div ref={this.main} className="main">
-          <a href="javascript:void(0)" className="closebtn" onClick ={this.toggleNav.bind(this)}><i className="fas fa-bars"></i></a>
+          <a className="closebtn" onClick ={this.toggleNav.bind(this)}><i className="fas fa-bars"></i></a>
           <div style={{ textAlign: "right", marginTop: "-32px", marginBottom: "16px" }}>
             <ReactToPrint
               trigger={() => (
-                <a href="#" className="download-btn">
+                <a className="download-btn">
                   Imprimir Listado
                 </a>
               )}

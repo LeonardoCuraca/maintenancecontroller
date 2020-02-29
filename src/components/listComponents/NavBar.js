@@ -120,7 +120,7 @@ export default class NavBar extends Component {
 
     let navBarContent = (<div></div>)
 
-    if (this.props.rol_id == 5 || this.props.rol_id == 4) {
+    if (this.props.rol_id == 5 || this.props.rol_id == 4 || this.props.rol_id == 7) {
       navBarContent = (
         <div className={classes.root}>
           <List component="nav" aria-label="main mailbox folders">

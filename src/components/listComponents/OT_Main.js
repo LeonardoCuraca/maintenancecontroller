@@ -508,31 +508,31 @@ export default class OT_Main extends Component {
 
             <div class="ui compact menu">
               <a style={{background: this.state.areacolor1}} class="item" onClick={this.selectArea.bind(this, 1)}>
-                <i class="icon mail"></i> Estructuras
+                <i class="icon truck"></i> Estructuras
                 <div class="floating ui red label">{this.state.estructuras}</div>
               </a>
               <a style={{background: this.state.areacolor2}} class="item" onClick={this.selectArea.bind(this, 2)}>
-                <i class="icon users"></i> Aceite
+                <i class="icon tint"></i> Aceite
                 <div class="floating ui orange label">{this.state.aceite}</div>
               </a>
               <a style={{background: this.state.areacolor3}} class="item" onClick={this.selectArea.bind(this, 3)}>
-                <i class="icon mail"></i> Neumáticos
+                <i class="icon circle outline"></i> Neumáticos
                 <div class="floating ui yellow label">{this.state.neumaticos}</div>
               </a>
               <a style={{background: this.state.areacolor4}} class="item" onClick={this.selectArea.bind(this, 4)}>
-                <i class="icon users"></i> Pesada
+                <i class="icon truck"></i> Pesada
                 <div class="floating ui green label">{this.state.pesada}</div>
               </a>
               <a style={{background: this.state.areacolor5}} class="item" onClick={this.selectArea.bind(this, 5)}>
-                <i class="icon mail"></i> Liviana
+                <i class="icon truck"></i> Liviana
                 <div class="floating ui teal label">{this.state.liviana}</div>
               </a>
               <a style={{background: this.state.areacolor6}} class="item" onClick={this.selectArea.bind(this, 6)}>
-                <i class="icon users"></i> Gas
+                <i class="icon tint"></i> Gas
                 <div class="floating ui blue label">{this.state.gas}</div>
               </a>
               <a style={{background: this.state.areacolor7}} class="item" onClick={this.selectArea.bind(this, 7)}>
-                <i class="icon mail"></i> Frios
+                <i class="icon snowflake"></i> Frios
                 <div class="floating ui purple label">{this.state.frios}</div>
               </a>
             </div>

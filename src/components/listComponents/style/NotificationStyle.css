@@ -54,3 +54,12 @@
 {
 	background-color: #000000;
 }
+
+.archive {
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.archive:hover {
+  color: red;
+}

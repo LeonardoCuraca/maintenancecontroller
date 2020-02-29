@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import NotificationCard from "./NotificationCard";
 
 import "./style/NotificationStyle.css";
 
@@ -15,9 +16,13 @@ export default class NotificationBar extends Component {
   }
 
   componentWillMount() {
-    axios.get(host.host + '/api/irregularidades').then(res => {
-      this.setState({
-        notifications: res.data.data
+    this.setState({
+      notifications: []
+    }, function() {
+      axios.get(host.host + '/api/irregularidades/pendientes').then(res => {
+        this.setState({
+          notifications: res.data
+        })
       })
     })
   }
@@ -27,17 +32,10 @@ export default class NotificationBar extends Component {
       <div class="notificationContainer">
         {this.state.notifications.map(notification => {
           return(
-            <div class="notificationCard">
-              <div class="ui icon message">
-                <i class="exclamation icon"></i>
-                <div class="content">
-                  <div class="header">
-                    {notification.mensaje}
-                  </div>
-                  <p>Placa: {notification.placa}</p>
-                </div>
-              </div>
-            </div>
+            <NotificationCard
+              notification = {notification}
+              reload = {this.componentWillMount.bind(this)}
+            />
           )
         })}
       </div>
